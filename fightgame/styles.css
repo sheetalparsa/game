@@ -1,0 +1,18 @@
+body {
+    padding: 5rem;
+}
+h2 {
+    margin-top: 2rem;
+}
+.buttons {
+    text-align: center;
+    align-items: center;
+}
+.center-align {
+    text-align: center;
+}
+.new-hero {
+    height: 45vh;
+    margin: 2rem 1rem;
+    /* margin-bottom: 2rem; */
+}

@@ -1,0 +1,66 @@
+<html ng-app="game">
+
+<head>
+    <title>Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="gameController as gc">
+    <div class="container-fluid">
+        <div class="row buttons">
+            <div class="col-sm-4">
+                <button class="btn btn-primary" ng-click="gc.makeNewHero()">New Hero</button>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary" ng-click="gc.fight()">Fight To Death</button>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary" ng-click="gc.champion()">Become Champion</button>
+            </div>
+        </div>
+        <div class="row" ng-show="gc.showNewHero">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 center-align">
+                <img class="new-hero" ng-src="{{gc.newHero.img}}">
+                <div>
+                    Name : {{gc.newHero.name}}<br>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row center-align" ng-show="gc.showFight">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <h2>{{gc.heroAlive.name}} is the winner!</h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                            <img class="new-hero" ng-src="{{gc.hero1.img}}">
+                            <div>
+                                Name : {{gc.hero1.name}}<br>
+                            </div>
+                    </div>
+                    <div class="col-sm-6">
+                            <img class="new-hero" ng-src="{{gc.hero2.img}}">
+                            <div>
+                                Name : {{gc.hero2.name}}<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row" ng-show="gc.showChamp">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 center-align">
+                    <h2>{{gc.champ.name}} is the champion!</h2>
+                    <img class="new-hero" ng-src="{{gc.champ.img}}">
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+    </div>
+</body>
+</html>
